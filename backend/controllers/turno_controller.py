@@ -180,3 +180,11 @@ def estadisticas():
     return jsonify(
         service.obtener_estadisticas()
     )
+
+
+@turno_bp.route("/api/dashboard")
+def dashboard():
+
+    return jsonify(
+        service.obtener_dashboard()
+    )

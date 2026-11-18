@@ -193,3 +193,59 @@ class TurnoService:
             "tiempo_total":
                 self.obtener_tiempo_total_espera()
         }
+
+    def obtener_dashboard(self):
+
+        emitidos = Turno.query.count()
+
+        espera = (
+            Turno.query
+            .filter_by(
+                estado="EN_ESPERA"
+            )
+            .count()
+        )
+
+        atencion = (
+            Turno.query
+            .filter_by(
+                estado="EN_ATENCION"
+            )
+            .count()
+        )
+
+        cancelados = (
+            Turno.query
+            .filter_by(
+                estado="CANCELADO"
+            )
+            .count()
+        )
+
+        prioritarios = (
+            Turno.query
+            .filter_by(
+                tipo="PRIORITARIO"
+            )
+            .count()
+        )
+
+        regulares = (
+            Turno.query
+            .filter_by(
+                tipo="REGULAR"
+            )
+            .count()
+        )
+
+        return {
+            "emitidos": emitidos,
+            "espera": espera,
+            "atencion": atencion,
+            "cancelados": cancelados,
+            "prioritarios": prioritarios,
+            "regulares": regulares,
+            "promedio": 3,
+            "tiempo_total":
+                self.obtener_tiempo_total_espera()
+        }
