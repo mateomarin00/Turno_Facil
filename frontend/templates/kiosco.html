@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>TurnoFácil</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/global.css') }}"
+    >
+
+    <script
+        src="{{ url_for('static', filename='js/kiosco.js') }}">
+    </script>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🧾
+            </div>
+
+            <h2>TurnoFácil</h2>
+
+        </div>
+
+        <div class="header-right">
+
+            <strong>Sede Central</strong>
+
+            <br>
+
+            <span id="fecha"></span>
+
+        </div>
+
+    </header>
+
+    <div class="top-bar">
+
+        <div>
+            Asignación de turnos · 07:00 a 16:00
+        </div>
+
+        <div>
+            Estamos para ayudarte
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <div class="caption">
+            BIENVENIDO A TURNOFÁCIL
+        </div>
+
+        <div class="title">
+            Tu atención comienza aquí
+        </div>
+
+        <div class="subtitle">
+            Selecciona el tipo de turno que necesitas.
+        </div>
+
+        <div
+            class="card-option card-blue"
+            onclick="generarTurno()"
+        >
+
+            <div class="option-left">
+
+                <div class="icon-box">
+                    🎫
+                </div>
+
+                <div>
+
+                    <div class="option-title">
+                        Turno Regular
+                    </div>
+
+                    <div class="option-description">
+                        Atención general por orden de llegada.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+        </div>
+
+        <div
+            class="card-option card-yellow"
+            onclick="window.location.href='/condicion-especial'"
+        >
+
+            <div class="option-left">
+
+                <div class="icon-box">
+                    ♿
+                </div>
+
+                <div>
+
+                    <div class="option-title">
+                        Turno Prioritario
+                    </div>
+
+                    <div class="option-description">
+                        Personas mayores, embarazadas y personas con discapacidad.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div irás un número de turno.
+            Espera el llamado en la pantalla de la sala.
+            Si necesitas ayuda, acércate a orientación.
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const fecha = new Date();
+
+        document.getElementById(
+            "fecha"
+        ).innerText =
+            fecha.toLocaleDateString(
+                "es-CO",
+                {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>

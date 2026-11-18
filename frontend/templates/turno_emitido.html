@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Turno Emitido</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/global.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div style="text-align:center;">
+
+            <h1>
+                ¡Tu turno está listo!
+            </h1>
+
+            <p>
+                Conserva tu número y espera el llamado.
+            </p>
+
+        </div>
+
+        <div class="ticket">
+
+            <div class="ticket-header">
+                Ticket Digital
+            </div>
+
+            <div class="ticket-body">
+
+                <div id="tipo-turno">
+                    Atención General
+                </div>
+
+                <div
+                    class="ticket-numero"
+                    id="numero-turno"
+                >
+                    ---
+                </div>
+
+                <div id="tiempo-promedio">
+                    Tiempo promedio: 0 minutos
+                </div>
+
+                <div id="personas-delante">
+                    0 personas delante de ti
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const datos = JSON.parse(
+            localStorage.getItem(
+                "turnoActual"
+            )
+        );
+
+        if (datos) {
+
+            document.getElementById(
+                "numero-turno"
+            ).innerText =
+                datos.numero;
+
+            document.getElementById(
+                "tipo-turno"
+            ).innerText =
+                datos.tipo;
+
+            document.getElementById(
+                "personas-delante"
+            ).innerText =
+                datos.personas_delante +
+                " personas delante de ti";
+
+            document.getElementById(
+                "tiempo-promedio"
+            ).innerText =
+                "Tiempo promedio: " +
+                datos.tiempo_estimado +
+                " minutos";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

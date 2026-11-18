@@ -1,0 +1,140 @@
+.header{
+    background:white;
+    height:90px;
+    border-bottom:3px solid #1E5BD9;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+}
+
+.top-bar{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    border-bottom:1px solid #E5E7EB;
+    color:#667085;
+}
+
+.content{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 40px;
+}
+
+.title{
+    font-size:64px;
+    font-weight:700;
+    color:#163B76;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#667085;
+    font-size:28px;
+    margin-bottom:50px;
+}
+
+.card-option{
+    width:100%;
+    max-width:950px;
+    margin-bottom:25px;
+    border-radius:24px;
+    padding:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card-option:hover{
+    transform:translateY(-3px);
+}
+
+.card-blue{
+    background:#1E5BD9;
+    color:white;
+}
+
+.card-yellow{
+    background:#F2CC66;
+    color:#163B76;
+}
+
+.option-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.icon-box{
+    width:72px;
+    height:72px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.18);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+.option-title{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.option-description{
+    font-size:22px;
+    line-height:1.4;
+}
+
+.arrow{
+    font-size:48px;
+    font-weight:bold;
+}
+
+.info-box{
+    max-width:950px;
+    background:white;
+    border:1px solid #D8E0EC;
+    border-radius:14px;
+    padding:22px;
+    color:#667085;
+    margin-top:30px;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.ticket{
+    width:420px;
+    margin:40px auto;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.ticket-header{
+    background:#163B76;
+    color:white;
+    padding:18px;
+}
+
+.ticket-body{
+    padding:40px;
+    text-align:center;
+}
+
+.ticket-numero{
+    font-size:96px;
+    color:#1E5BD9;
+    font-weight:700;
+    margin:25px 0;
+}

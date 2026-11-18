@@ -1,0 +1,60 @@
+body{
+    background:#0e53c1;
+}
+
+.card{
+
+    width:500px;
+    text-align:center;
+}
+
+.logo{
+
+    font-size:38px;
+    font-weight:bold;
+
+    color:#0e53c1;
+}
+
+.titulo{
+
+    margin-top:20px;
+
+    margin-bottom:25px;
+}
+
+.btn-regular{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0e53c1;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin-top:10px;
+}
+
+.btn-prioritario{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ffc107;
+
+    cursor:pointer;
+
+    margin-top:10px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Pantalla TV</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/pantalla.css') }}"
+    >
+
+</head>
+
+<body>
+
+<header class="tv-header">
+
+    <div class="logo-tv">
+
+        TurnoFácil
+
+    </div>
+
+    <div>
+
+        Sede Central · Sala de espera
+
+    </div>
+
+    <div id="hora">
+
+    </div>
+
+</header>
+
+<div class="turno-container">
+
+    <div
+        class="turno-principal"
+        id="turno">
+
+        ---
+
+    </div>
+
+    <div class="dirijase">
+
+        DIRÍJASE A LA
+
+    </div>
+
+    <div class="taquilla">
+
+        TAQUILLA 04
+
+    </div>
+
+</div>
+
+<div class="paneles">
+
+    <div class="panel">
+
+        <h3>
+            Próximos turnos
+        </h3>
+
+        <div id="proximos">
+
+            Aún no disponible
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <h3>
+            Métricas
+        </h3>
+
+        <p>
+            Personas esperando:
+        </p>
+
+        <h2 id="espera">
+            0
+        </h2>
+
+        <p>
+            Tiempo promedio:
+        </p>
+
+        <h2 id="promedio">
+            0 min
+        </h2>
+
+    </div>
+
+</div>
+
+<script
+src="{{ url_for('static', filename='js/pantalla.js') }}">
+</script>
+
+</body>
+
+</html>

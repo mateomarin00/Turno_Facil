@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Condición Especial</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/global.css') }}"
+    >
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🧾
+        </div>
+
+        <h2>TurnoFácil</h2>
+
+    </div>
+
+</header>
+
+<div class="top-bar">
+
+    <div>
+        Asignación de turnos · 07:00 a 16:00
+    </div>
+
+    <div>
+        Estamos para ayudarte
+    </div>
+
+</div>
+
+<div class="content">
+
+    <div class="caption">
+        SELECCIÓN DE CONDICIÓN ESPECIAL
+    </div>
+
+    <div class="title">
+        ¿Qué condición especial presenta?
+    </div>
+
+    <div class="subtitle">
+        Selecciona la condición que corresponda.
+    </div>
+
+    <div
+        class="card-option card-yellow"
+        onclick="generarPrioritario('TERCERA_EDAD')"
+    >
+        <div class="option-title">
+            Persona mayor
+        </div>
+    </div>
+
+    <div
+        class="card-option card-yellow"
+        onclick="generarPrioritario('EMBARAZADA')"
+    >
+        <div class="option-title">
+            Embarazo
+        </div>
+    </div>
+
+    <div
+        class="card-option card-yellow"
+        onclick="generarPrioritario('MOVILIDAD_REDUCIDA')"
+    >
+        <div class="option-title">
+            Persona con discapacidad
+        </div>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/kiosco.js') }}"></script>
+
+</body>
+
+</html>

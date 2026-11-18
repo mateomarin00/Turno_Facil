@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Panel del Asesor</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/asesor.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            TurnoFácil
+        </div>
+
+        <div>
+            Gestión de atención
+        </div>
+
+    </header>
+
+    <div class="container">
+
+        <div class="top-actions">
+
+            <div>
+
+                <h1 class="page-title">
+                    Panel del asesor
+                </h1>
+
+                <small>
+                    Atención general y prioritaria
+                </small>
+
+            </div>
+
+            <div class="button-group">
+
+                <button
+                    class="btn btn-outline"
+                    onclick="registrarInasistencia()"
+                >
+                    Inasistencia
+                </button>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="llamarSiguiente()"
+                >
+                    Llamar siguiente
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="turno-card">
+
+            <div>
+
+                <small>
+                    TURNO ACTUAL
+                </small>
+
+                <div>
+                    Llamado a Taquilla 04
+                </div>
+
+            </div>
+
+            <div
+                class="turno-numero"
+                id="turnoActual"
+            >
+                ---
+            </div>
+
+            <div>
+
+                <div id="tipoActual">
+                    Sin atención
+                </div>
+
+                <div id="condicionActual">
+                </div>
+
+                <div id="horaLlamado">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="table-card">
+
+                <h3>
+                    Fila de espera
+                </h3>
+
+                <br>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Turno</th>
+
+                            <th>Tipo</th>
+
+                            <th>Estado</th>
+
+                            <th>Delante</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tablaFila">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="stats-card">
+
+                <h3>
+                    En espera
+                </h3>
+
+                <div
+                    class="big-number"
+                    id="usuariosEspera"
+                >
+                    0
+                </div>
+
+                <div class="stat-line">
+
+                    <span>
+                        Prioritarios
+                    </span>
+
+                    <span id="prioritarios">
+                        0
+                    </span>
+
+                </div>
+
+                <div class="stat-line">
+
+                    <span>
+                        Regulares
+                    </span>
+
+                    <span id="regulares">
+                        0
+                    </span>
+
+                </div>
+
+                <div class="stat-line">
+
+                    <span>
+                        Espera estimada
+        </span>
+
+                    <span id="esperaTotal">
+                        0 min
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    
+    <script
+    src="{{ url_for('static', filename='js/asesor.js') }}">
+    </script>
+
+
+</body>
+
+</html>
