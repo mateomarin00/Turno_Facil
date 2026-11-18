@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Dashboard Administrativo
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/admin.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div>
+
+            <h1>
+                Dashboard Administrativo
+            </h1>
+
+            <div class="subtitulo">
+                Métricas operativas en tiempo real
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="contenedor">
+
+        <div class="card">
+
+            <h3>
+                Turnos Emitidos
+            </h3>
+
+            <div id="emitidos">
+                0
+            </div>
+
+        </div>
+
+        <div class="card card-espera">
+
+            <h3>
+                En Espera
+            </h3>
+
+            <div id="espera">
+                0
+            </div>
+
+        </div>
+
+        <div class="card card-atencion">
+
+            <h3>
+                En Atención
+            </h3>
+
+            <div id="atencion">
+                0
+            </div>
+
+        </div>
+
+        <div class="card card-cancelado">
+
+            <h3>
+                Cancelados
+            </h3>
+
+            <div id="cancelados">
+                0
+            </div>
+
+        </div>
+
+        <div class="card card-prioritario">
+
+            <h3>
+                Prioritarios
+            </h3>
+
+            <div id="prioritarios">
+                0
+            </div>
+
+        </div>
+
+        <div class="card card-regular">
+
+            <h3>
+                Regulares
+            </h3>
+
+            <div id="regulares">
+                0
+            </div>
+
+        </div>
+
+        <div class="card grande">
+
+            <h3>
+                Tiempo Promedio de Atención
+            </h3>
+
+            <div id="promedio">
+                0 min
+            </div>
+
+        </div>
+
+    </div>
+
+    <script
+        src="{{ url_for('static', filename='js/admin.js') }}">
+    </script>
+
+</body>
+
+</html>

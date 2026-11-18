@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#F4F6FA;
+}
+
+.header{
+
+    background:#163B76;
+
+    color:white;
+
+    padding:25px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+
+.header h1{
+
+    font-size:32px;
+}
+
+.subtitulo{
+
+    color:#DDE6F4;
+}
+
+.contenedor{
+
+    max-width:1400px;
+
+    margin:40px auto;
+
+    padding:0 30px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+}
+
+.card h3{
+
+    color:#77839A;
+
+    margin-bottom:15px;
+}
+
+.card div{
+
+    font-size:58px;
+
+    font-weight:700;
+
+    color:#163B76;
+}
+
+.grande{
+
+    grid-column:1/4;
+
+    background:#163B76;
+
+    color:white;
+}
+
+.grande h3{
+
+    color:white;
+}
+
+.grande div{
+
+    color:white;
+}
+
+.card-prioritario{
+
+    border-left:8px solid #F4CD63;
+}
+
+.card-regular{
+
+    border-left:8px solid #1E5BD9;
+}
+
+.card-cancelado{
+
+    border-left:8px solid #D9534F;
+}
+
+.card-atencion{
+
+    border-left:8px solid #28A745;
+}
+
+.card-espera{
+
+    border-left:8px solid #FF9800;
+}
