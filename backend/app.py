@@ -2,8 +2,9 @@ from flask import Flask, render_template
 from flask_cors import CORS
 
 from config import Config
-from models.turno import db, Turno
+from models.turno import db
 from controllers.turno_controller import turno_bp
+
 
 app = Flask(
     __name__,
@@ -20,9 +21,9 @@ db.init_app(app)
 app.register_blueprint(turno_bp)
 
 
-# ----------------------------
-# Vistas principales
-# ----------------------------
+# ----------------------------------
+# Rutas principales
+# ----------------------------------
 
 @app.route("/")
 def inicio():
@@ -58,25 +59,27 @@ def turno_emitido():
 def administrador():
     return render_template("administrador.html")
 
+@app.route("/horario-finalizado")
+def horario_finalizado():
+    return render_template(
+        "horario_finalizado.html"
+    )
 
-# ----------------------------
-# Inicialización de BD
-# ----------------------------
+
+# ----------------------------------
+# Inicialización Base de Datos
+# ----------------------------------
 
 with app.app_context():
 
+    db.drop_all()
+
     db.create_all()
 
-    # Limpia datos anteriores para iniciar
-    # cada demostración desde cero
-    Turno.query.delete()
 
-    db.session.commit()
-
-
-# ----------------------------
+# ----------------------------------
 # Inicio aplicación
-# ----------------------------
+# ----------------------------------
 
 if __name__ == "__main__":
     app.run(debug=True)

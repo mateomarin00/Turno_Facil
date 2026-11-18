@@ -16,6 +16,10 @@ class TurnoService:
 
     def crear_turno_regular(self):
 
+        if not self.horario_habilitado():
+            return None
+        
+
         secuenciador = SecuenciadorTurnos()
 
         numero = secuenciador.generar_numero()
@@ -36,7 +40,8 @@ class TurnoService:
         self,
         condicion
     ):
-
+        if not self.horario_habilitado():
+            return None
         secuenciador = SecuenciadorTurnos()
 
         numero = secuenciador.generar_numero()
@@ -86,7 +91,15 @@ class TurnoService:
         if not turno:
             return None
 
-        turno.estado = "CANCELADO"
+        turno.cantidad_llamados += 1
+
+        if turno.cantidad_llamados >= 3:
+
+            turno.estado = "CANCELADO"
+
+        else:
+
+            turno.estado = "EN_ESPERA"
 
         db.session.commit()
 
@@ -157,6 +170,22 @@ class TurnoService:
             )
             .all()
         )
+
+    def obtener_proximos_turnos(self):
+
+        turnos = (
+            Turno.query
+            .filter_by(
+                estado="EN_ESPERA"
+            )
+            .order_by(
+                Turno.id.asc()
+            )
+            .limit(3)
+            .all()
+    )
+
+        return turnos
 
     def obtener_estadisticas(self):
 
@@ -249,3 +278,16 @@ class TurnoService:
             "tiempo_total":
                 self.obtener_tiempo_total_espera()
         }
+
+    def horario_habilitado(self):
+
+        hora_actual = datetime.now()
+
+        hora_limite = hora_actual.replace(
+            hour=19,
+            minute=45,
+            second=0,
+            microsecond=0
+        )
+
+        return hora_actual < hora_limite

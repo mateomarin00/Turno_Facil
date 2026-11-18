@@ -74,8 +74,8 @@ async function registrarInasistencia() {
         const datos = await respuesta.json();
 
         alert(
-            datos.mensaje ||
-            "Turno marcado como inasistencia"
+            `Llamados realizados: ${datos.llamados}
+Estado actual: ${datos.estado}`
         );
 
         cargarFila();

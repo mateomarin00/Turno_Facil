@@ -11,6 +11,17 @@ async function generarTurno() {
 
         const datos = await respuesta.json();
 
+        if (
+            datos.mensaje ===
+            "HORARIO_FINALIZADO"
+        ) {
+
+            window.location.href =
+                "/horario-finalizado";
+
+            return;
+        }
+
         localStorage.setItem(
             "turnoActual",
             JSON.stringify(datos)
@@ -21,7 +32,10 @@ async function generarTurno() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "Error al generar turno:",
+            error
+        );
 
     }
 
@@ -35,7 +49,12 @@ function mostrarPrioridades() {
             "prioridades"
         );
 
-    panel.style.display = "block";
+    if (panel) {
+
+        panel.style.display =
+            "block";
+
+    }
 
 }
 
@@ -44,28 +63,53 @@ async function generarPrioritario(
     condicion
 ) {
 
-    const respuesta = await fetch(
-        "/api/turno-prioritario",
-        {
-            method: "POST",
-            headers: {
-                "Content-Type":
+    try {
+
+        const respuesta = await fetch(
+            "/api/turno-prioritario",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
                     "application/json"
-            },
-            body: JSON.stringify({
-                condicion
-            })
+                },
+
+                body: JSON.stringify({
+                    condicion
+                })
+            }
+        );
+
+        const datos =
+            await respuesta.json();
+
+        if (
+            datos.mensaje ===
+            "HORARIO_FINALIZADO"
+        ) {
+
+            window.location.href =
+                "/horario-finalizado";
+
+            return;
         }
-    );
 
-    const datos = await respuesta.json();
+        localStorage.setItem(
+            "turnoActual",
+            JSON.stringify(datos)
+        );
 
-    localStorage.setItem(
-        "turnoActual",
-        JSON.stringify(datos)
-    );
+        window.location.href =
+            "/turno-emitido";
 
-    window.location.href =
-        "/turno-emitido";
+    } catch (error) {
+
+        console.error(
+            "Error al generar turno prioritario:",
+            error
+        );
+
+    }
 
 }

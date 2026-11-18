@@ -22,6 +22,26 @@ async function actualizarPantalla() {
         "promedio"
     ).innerText =
         datos.promedio + " min";
+        const proximos =
+    document.getElementById(
+        "proximos"
+    );
+
+proximos.innerHTML = "";
+
+datos.proximos.forEach(turno => {
+
+    proximos.innerHTML += `
+        <div style="
+            margin-top:10px;
+            font-size:24px;
+            font-weight:bold;
+        ">
+            ${turno}
+        </div>
+    `;
+
+});
 
 }
 

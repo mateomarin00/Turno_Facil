@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Horario de Atención Finalizado
+    </title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+
+            background:#F4F6FA;
+
+            min-height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+        }
+
+        .card{
+
+            background:white;
+
+            width:700px;
+
+            padding:60px;
+
+            border-radius:20px;
+
+            text-align:center;
+
+            box-shadow:
+            0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .icono{
+
+            font-size:90px;
+
+            margin-bottom:20px;
+        }
+
+        h1{
+
+            color:#163B76;
+
+            margin-bottom:20px;
+        }
+
+        p{
+
+            color:#667085;
+
+            font-size:18px;
+
+            line-height:1.6;
+
+            margin-top:10px;
+        }
+
+        .boton{
+
+            display:inline-block;
+
+            margin-top:30px;
+
+            background:#1E5BD9;
+
+            color:white;
+
+            padding:15px 25px;
+
+            border-radius:10px;
+
+            text-decoration:none;
+
+            font-weight:600;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="icono">
+            ⏰
+        </div>
+
+        <h1>
+            Horario de atención finalizado
+        </h1>
+
+        <p>
+            La asignación de turnos se encuentra disponible
+            entre las 08:00 a.m. y las 08:00 p.m.
+        </p>
+
+        <p>
+           
+            El sistema bloquea automáticamente
+            la generación de nuevos turnos
+            desde las 07:45 p.m.
+        </p>
+
+        <p>
+            Por favor regresa durante el horario
+            de atención establecido.
+        </p>
+
+        <a
+            href="/kiosco"
+            class="boton">
+
+            Volver al inicio
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
